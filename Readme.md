@@ -1,61 +1,146 @@
-# AWS Cloud Infrastructure Automation Portfolio
+# AWS Automation Portfolio
 
-### **Executive Summary**
-This repository serves as a professional showcase of enterprise-grade automation solutions engineered within the AWS ecosystem. The primary objective is to leverage **Python (Boto3)** and **AWS Systems Manager (SSM)** to achieve operational excellence, robust security governance, and cloud financial optimization.
+## A collection of AWS reporting and billing automation projects
 
----
-
-## 🛠️ Strategic Focus Areas
-
-* ⚙️ **Infrastructure as Code (IaC) & Automation:** Streamlining resource provisioning and lifecycle management.
-* 🚀 **Operational Excellence:** Implementing self-healing workflows and automated patching schedules.
-* 💰 **Cost Optimization (FinOps):** Developing logic to identify and remediate underutilized cloud assets.
-* 🔐 **Security & Governance:** Automated auditing of IAM entities and S3 security configurations.
+**Owner:** Hima Varsha M  
+**Repository:** `aws-automation-portfolio`  
+**Branch:** `cost-automation-codes`
 
 ---
 
-## 🏗️ Technical Portfolio
+## 1. Overview
 
-### 🔐 **Cloud Governance & Security**
-* **IAM Policy Engine:** Automated analysis of identity permissions to enforce the Principle of Least Privilege (PoLP).
-* **Resource Auditor:** Logic-driven enforcement of encryption-at-rest and public access block configurations across S3 and EBS volumes.
+This branch contains AWS automation projects focused on reducing manual reporting effort, improving consistency, and generating structured outputs for review or business use.
 
-### 💰 **Lifecycle & Cost Management**
-* **Intelligent Scheduler:** Boto3-based start/stop automation for non-critical EC2/RDS environments to maximize cost-efficiency.
-* **Cleanup Utilities:** Automated reclamation of orphaned resources, including stale EBS snapshots and unassociated Elastic IPs.
+The following automation modules are available in this branch:
 
-### ⚙️ **Systems Administration**
-* **SSM Automation:** Custom documents for cross-platform patch management and configuration drift remediation.
-* **Fleet Management:** Multi-region command execution and instance health reporting via Python SDK.
+- Consolidated Report
+- Invoice Automation
+- RI Utilization Report
+
+Each automation has its own folder, script files, input folder, output folder, and README documentation.
 
 ---
 
-## 📊 Architecture & Requirements
+## 2. Branch Structure
 
-* 🐍 **Runtime Environment:** Python 3.9 or higher.
-* 📦 **Core SDK:** Boto3 (AWS SDK for Python).
-* 🔑 **Authentication:** AWS CLI configured with appropriate IAM Role/User permissions.
-* 🔄 **Integrations:** AWS Lambda, EventBridge, Systems Manager, and CloudWatch.
+> You are currently on the `cost-automation-codes` branch. All folders and scripts below are available in this branch.
+
+```text
+cost-automation-codes/
+|-- README.md
+|-- main.gitignore
+|-- Consolidated Report/
+|   |-- README.md
+|   |-- consolidated-automation.py
+|   |-- accounts.txt
+|   |-- Month1/
+|   |   `-- 123456789012_account_report.csv
+|   `-- Month2/
+|       `-- 123456789012_account_report.csv
+|-- Invoice Automation/
+|   |-- README.md
+|   |-- invoice-automation.py
+|   |-- generate_dummy_invoices.py
+|   |-- read_invoices.py
+|   |-- .gitignore
+|   |-- assets/
+|   |   `-- screenshots/
+|   |       `-- .gitkeep
+|   `-- invoices/
+|       `-- .gitkeep
+`-- RI Utilization Report/
+    |-- README.md
+    |-- utilization-automation.py
+    `-- Month - YYYY/
+        `-- reservations-utilization-table - *.csv
+```
 
 ---
 
-## 👔 Professional Profile
+## 3. Automation Modules
 
-I am a **Cloud Infrastructure Specialist** with a focus on AWS automation and Python development. My work centers on transforming manual, high-toil processes into scalable, self-healing codebases.
+### 3.1 Consolidated Report
 
-**Core Competencies:**
-* 📜 **Scripting:** Advanced Python (Boto3), Shell Scripting.
-* ☁️ **AWS Expertise:** EC2, S3, IAM, SSM, Lambda, FinOps.
-* 📅 **Industry Tenure:** Cloud Operations professional since February 2024.
+Combines multiple AWS billing CSV reports across accounts and months into a single consolidated Excel report.
+
+| Field  | Details                                              |
+|--------|------------------------------------------------------|
+| Folder | `Consolidated Report/`                               |
+| Script | `consolidated-automation.py`                         |
+| Input  | Monthly CSV files per account (`Month1/`, `Month2/`) |
+| Config | `accounts.txt`                                       |
+| Output | Consolidated Excel report                            |
+
+### 3.2 Invoice Automation
+
+Reads AWS invoice PDF files, extracts account-wise billing details, and generates a structured Excel Invoice Report.
+
+| Field  | Details                                                                                                                      |
+|--------|------------------------------------------------------------------------------------------------------------------------------|
+| Folder | `Invoice Automation/`                                                                                                        |
+| Script | `invoice-automation.py`                                                                                                      |
+| Input  | Invoice PDFs placed in `invoices/`                                                                                           |
+| Output | Excel Invoice Report                                                                                                         |
+| Extras | `generate_dummy_invoices.py` for testing, `read_invoices.py` for extraction, `assets/screenshots/` for documentation visuals |
+
+### 3.3 RI Utilization Report
+
+Processes Reserved Instance utilization CSV exports from AWS Cost Explorer and generates a summarized Excel report.
+
+| Field  | Details                                                   |
+|--------|-----------------------------------------------------------|
+| Folder | `RI Utilization Report/`                                  |
+| Script | `utilization-automation.py`                               |
+| Input  | RI utilization CSVs per account/service (`Month - YYYY/`) |
+| Output | RI Utilization Excel report                               |
 
 ---
 
-## 📫 Contact & Network
+## 4. GitHub Upload Guidelines
 
-For professional inquiries or networking opportunities:
+Upload only source code, documentation, and safe placeholder files.
 
-* 📧 **Email:** [awsautomationportfolio@gmail.com](mailto:awsautomationportfolio@gmail.com)
-* 🤝 **LinkedIn:** [Hima Varsha M](https://www.linkedin.com/in/mucherlahimavarsha/)
+**Commit these files:**
+
+```text
+README.md
+main.gitignore
+automation-folder/README.md
+automation-folder/*.py
+automation-folder/input/.gitkeep
+automation-folder/output/.gitkeep
+```
+
+**Do not commit confidential files:**
+
+```text
+*.pdf
+*.xlsx
+*.csv
+*.json
+*.env
+```
+
+Real AWS billing reports, invoice PDFs, generated Excel files, and credential files should stay local.
 
 ---
-*Created and maintained by Hima Varsha M.*
+
+## 5. Documentation Standard for Each Automation
+
+Each automation folder has its own `README.md` with:
+
+- Purpose of the automation
+- Access required
+- Input files required
+- Setup instructions
+- Run command
+- Output file details
+- Common issues and fixes
+- Owner details
+
+---
+
+## 6. Ownership
+
+This branch and its source code are owned by **Hima Varsha M**.
