@@ -52,7 +52,7 @@ cost-automation-codes/
 |   |-- assets/
 |   |   `-- screenshots/               <- Images used in README documentation
 |   |       `-- .gitkeep
-|   `-- invoices/                      <- Place input invoice PDFs here (not committed)
+|   `-- invoices/                      <- Place input invoice PDFs here
 |       `-- .gitkeep
 |
 `-- RI Utilization Report/             <- Automation 3

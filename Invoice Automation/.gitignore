@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+generate_dummy_invoices.py
+read_invoices.py
+invoice_text_dump.txt
+
+# Keep real invoice files and generated billing reports out of GitHub.
+invoices/*
+!invoices/.gitkeep
+Invoice_Report_Dev&Prod-*.xlsx
+*.xlsx
+
+# Local editor and OS files.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
