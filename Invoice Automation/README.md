@@ -208,55 +208,7 @@ Invoice Report is updated for April-2026 : Invoice_Report_Dev&Prod-April-2026.xl
 
 <div align="center">
 
-```text
- ┌─────────────────────────────┐
- │   AWS Invoice PDFs placed   │
- │     in invoices/ folder     │
- └────────────┬────────────────┘
-              │
-              ▼
- ┌─────────────────────────────┐
- │  Validate billing period    │
- │  against previous month     │
- └────────────┬────────────────┘
-              │
-              ▼
- ┌─────────────────────────────┐
- │  Extract text from each PDF │
- │  using pdfplumber           │
- └────────────┬────────────────┘
-              │
-              ▼
- ┌─────────────────────────────┐
- │  Parse account name, ID,    │
- │  invoice number, and charges│
- └────────────┬────────────────┘
-              │
-              ▼
- ┌─────────────────────────────┐
- │  Classify charges:          │
- │  AWS Services / Marketplace │
- │  / Late Fee                 │
- └────────────┬────────────────┘
-              │
-              ▼
- ┌─────────────────────────────┐
- │  Remove duplicate entries   │
- └────────────┬────────────────┘
-              │
-              ▼
- ┌─────────────────────────────┐
- │  Build account-wise rows    │
- │  with totals and grand total│
- └────────────┬────────────────┘
-              │
-              ▼
- ┌─────────────────────────────┐
- │  Export formatted Excel     │
- │  Invoice Report using       │
- │  openpyxl and save to disk  │
- └─────────────────────────────┘
-```
+![Processing Flow](assets/screenshots/processing-flow.svg)
 
 </div>
 
@@ -531,4 +483,3 @@ It is prepared for professional portfolio usage, internal demonstration, GitHub 
 This AWS Invoice Automation project delivers a reliable and reusable solution for monthly invoice reporting. It eliminates manual effort, enforces consistent formatting, and produces a structured Excel Invoice Report directly from AWS invoice PDFs — with no AWS credentials, no hardcoded values, and no manual intervention required.
 
 The project is suitable for professional review and portfolio presentation. It demonstrates practical Python automation, clean code structure, billing data classification, Excel report generation, and responsible data handling practices.
-
