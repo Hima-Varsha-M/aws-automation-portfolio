@@ -206,6 +206,8 @@ Invoice Report is updated for April-2026 : Invoice_Report_Dev&Prod-April-2026.xl
 
 ## 9. Processing Flow
 
+<div align="center">
+
 ```text
  ┌─────────────────────────────┐
  │   AWS Invoice PDFs placed   │
@@ -255,6 +257,8 @@ Invoice Report is updated for April-2026 : Invoice_Report_Dev&Prod-April-2026.xl
  │  openpyxl and save to disk  │
  └─────────────────────────────┘
 ```
+
+</div>
 
 ---
 
