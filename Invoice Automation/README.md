@@ -531,3 +531,4 @@ It is prepared for professional portfolio usage, internal demonstration, GitHub 
 This AWS Invoice Automation project delivers a reliable and reusable solution for monthly invoice reporting. It eliminates manual effort, enforces consistent formatting, and produces a structured Excel Invoice Report directly from AWS invoice PDFs — with no AWS credentials, no hardcoded values, and no manual intervention required.
 
 The project is suitable for professional review and portfolio presentation. It demonstrates practical Python automation, clean code structure, billing data classification, Excel report generation, and responsible data handling practices.
+
