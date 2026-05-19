@@ -249,6 +249,12 @@ Invoice_Report_Dev&Prod-<Month>-<Year>.xlsx
 | Grand total row | Uses green fill with bold text |
 | Freeze panes | Row 1 and 2 are frozen for easy scrolling |
 
+<div align="center">
+
+![Generated Excel Invoice Report Layout](assets/screenshots/excel-report-layout.svg)
+
+</div>
+
 ---
 
 ## 11. Supporting Visuals
