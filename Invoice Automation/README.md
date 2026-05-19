@@ -116,6 +116,10 @@ Invoice Automation/
 ├── .gitignore
 ├── invoices/
 │   └── .gitkeep
+├── sample-invoices/
+│   ├── Invoice_DEMO0000001.pdf
+│   ├── Invoice_DEMO0000002.pdf
+│   └── Invoice_DEMO0000003.pdf
 ├── assets/
 │   └── screenshots/
 │       ├── process-flow.svg
@@ -132,9 +136,10 @@ Invoice Automation/
 |---|---|
 | `invoice-automation.py` | Main Python automation script |
 | `README.md` | Full project documentation |
-| `.gitignore` | Prevents invoice PDFs and Excel reports from being committed |
-| `invoices/` | Input folder — place all AWS invoice PDFs here before running |
+| `.gitignore` | Prevents real invoice PDFs and Excel reports from being committed |
+| `invoices/` | Input folder — place real AWS invoice PDFs here before running |
 | `invoices/.gitkeep` | Keeps the empty folder tracked in GitHub |
+| `sample-invoices/` | Sample dummy invoice PDFs with fake data — safe to push to GitHub |
 | `assets/screenshots/` | SVG visuals used in this README |
 | `Invoice_Report_Dev&Prod-<Month>-<Year>.xlsx` | Generated Excel report — saved in the project root, not committed |
 
@@ -156,6 +161,8 @@ pip install pdfplumber openpyxl
 | `openpyxl` | Creates, formats, and saves the Excel Invoice Report |
 
 No database, cloud API, AWS SDK, or external service is required.
+
+> **Note:** If you want to regenerate the sample dummy invoices in `sample-invoices/`, install `reportlab` additionally and run `generate_dummy_invoices.py`. This is optional and not required to run the main automation.
 
 ---
 
@@ -179,6 +186,8 @@ invoices/
 ├── Invoice_987654321.pdf
 └── Invoice_112233445.pdf
 ```
+
+> **Sample invoices:** The `sample-invoices/` folder contains dummy PDFs with fake data that match the expected invoice format. Use them to understand the input structure before running with real invoices.
 
 ---
 
@@ -442,6 +451,9 @@ invoice-automation.py
 README.md
 .gitignore
 invoices/.gitkeep
+sample-invoices/Invoice_DEMO0000001.pdf
+sample-invoices/Invoice_DEMO0000002.pdf
+sample-invoices/Invoice_DEMO0000003.pdf
 assets/screenshots/process-flow.svg
 assets/screenshots/access-and-security.svg
 assets/screenshots/excel-report-layout.svg
@@ -455,11 +467,12 @@ assets/screenshots/console-output.svg
 ```text
 invoices/Invoice_<real-invoice-number>.pdf
 Invoice_Report_Dev&Prod-*.xlsx
+generate_dummy_invoices.py
 __pycache__/
 *.pyc
 ```
 
-> **Important:** The `.gitignore` is configured to block all PDFs. Real invoice PDFs with actual billing data must never be committed.
+> **Important:** Real invoice PDFs with actual billing data must never be committed. Only the dummy PDFs in `sample-invoices/` are safe to push. The `generate_dummy_invoices.py` script is a local utility and should not be committed.
 
 ---
 

@@ -10,6 +10,10 @@ invoices/*
 Invoice_Report_Dev&Prod-*.xlsx
 *.xlsx
 
+# Allow sample invoices to be pushed to GitHub.
+!sample-invoices/
+!sample-invoices/**
+
 # Local editor and OS files.
 .vscode/
 .idea/
